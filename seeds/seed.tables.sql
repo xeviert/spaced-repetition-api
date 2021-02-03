@@ -26,8 +26,8 @@ VALUES
   (3, 1, 'vino', 'wine', 4),
   (4, 1, 'pesce', 'fish', 5),
   (5, 1, 'pane', 'bread', 6),
-  (6, 1, 'caffè', 'an espresso', 7),
-  (7, 1, 'è delizioso', 'this is delicious', 8),
+  (6, 1, 'caffe', 'an espresso', 7),
+  (7, 1, 'e delizioso', 'this is delicious', 8),
   (8, 1, 'grazie', 'thank you', null);
 
 UPDATE "language" SET head = 1 WHERE id = 1;
