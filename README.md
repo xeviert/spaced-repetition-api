@@ -1,53 +1,36 @@
-# Xevier
-# Spaced repetition API!
+# Lango - API
+### Language Learning App
 
-## Local dev setup
+## Live App: https://spaced-repetition-plum.vercel.app/
 
-If using user `dunder-mifflin`:
+## API ENDPOINTS
 
-```bash
-mv example.env .env
-createdb -U dunder-mifflin spaced-repetition
-createdb -U dunder-mifflin spaced-repetition-test
+```
+/api/auth/token
+-- POST - user login using JWT
+
+/api/language
+-- GET - gets list of words in the language assigned to user
+
+/api/language/head
+-- GET - gets first word of collection
+
+/api/language/guess
+-- POST - processes user guess and creates a linked list
+
+/api/user
+-- POST - creates a new user with name, username, and password
 ```
 
-If your `dunder-mifflin` user has a password be sure to set it in `.env` for all appropriate fields. Or if using a different user, update appropriately.
+This project uses spaced repetition to teach Italian. After creating an account, the user guesses the translation for the Italian word and the next page shows if they got the word right or wrong. 
 
-```bash
-npm install
-npm run migrate
-env MIGRATION_DB_NAME=spaced-repetition-test npm run migrate
-```
+For each user, score is kept on how many times they have guessed on the word, the correct and incorrect number of guesses on each word.
 
-And `npm test` should work at this point
+If you would like to quickly demo Lango, please use the login credentials below.
+Username: admin
+Password: pass
 
-## Configuring Postgres
-
-For tests involving time to run properly, configure your Postgres database to run in the UTC timezone.
-
-1. Locate the `postgresql.conf` file for your Postgres installation.
-   1. E.g. for an OS X, Homebrew install: `/usr/local/var/postgres/postgresql.conf`
-   2. E.g. on Windows, _maybe_: `C:\Program Files\PostgreSQL\11.2\data\postgresql.conf`
-   3. E.g  on Ubuntu 18.04 probably: '/etc/postgresql/10/main/postgresql.conf'
-2. Find the `timezone` line and set it to `UTC`:
-
-```conf
-# - Locale and Formatting -
-
-datestyle = 'iso, mdy'
-#intervalstyle = 'postgres'
-timezone = 'UTC'
-#timezone_abbreviations = 'Default'     # Select the set of available time zone
-```
-
-## Scripts
-
-Start the application `npm start`
-
-Start nodemon for the application `npm run dev`
-
-Run the tests mode `npm test`
-
-Run the migrations up `npm run migrate`
-
-Run the migrations down `npm run migrate -- 0`
+### Future Plans
+- For personal use, I'm currently in the process of adding more languages and adding the 100 most used words of those languages. 
+- I'll also be adding an extra page where the user gets to choose the language. 
+- Unit testing will be added as well.
