@@ -22,7 +22,7 @@
 -- POST - creates a new user with name, username, and password
 ```
 
-This project uses spaced repetition to teach Italian. After creating an account, the user guesses the translation for the Italian word and the next page shows if they got the word right or wrong. 
+This project uses spaced repetition to teach French. After creating an account, the user guesses the translation for the French word and the next page shows if they got the word right or wrong. 
 
 For each user, score is kept on how many times they have guessed on the word, the correct and incorrect number of guesses on each word.
 
