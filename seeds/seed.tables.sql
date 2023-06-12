@@ -132,51 +132,6 @@ VALUES
   (120, 1, 'voir', 'see', 121),
   (121, 1, 'regarder', 'look', null);
 
- 
---   41. deux (det., noun [m.]) two
--- 42. même (adj., pron.) same; (adv.) even
--- 44. aussi (adv.) to, also; (conj.) as
--- 45. celui (pron.) that, the one, he, him
--- 47. bien (adv.) well; (noun [m.]) good
--- 48. où (adv., pron.) where
--- 49. fois (noun [f.]) time(s)
--- 51. encore (adv.) again, yet
--- 52. nouveau (adj.) new; (noun [m.]) new (thing)
--- 54. cela (pron.) that, it
--- 56. premier (det., adj.) first
--- 57. vouloir (verb) to want; (noun [m.]) will, desire
--- 58. déjà (adv.) already
--- 61. me (pron.) me, to me, myself
--- 62. moins (adv.) less; (prep., noun [m.]) minus
--- 63. aucun (det., adj., pron.) none, either, neither, not any
--- 64. lui (pron.) him, her
--- 65. temps (noun [m.]) time
--- 67. savoir (verb) to know; (noun [m.]) learning, knowledge
--- 68. falloir (verb) to take, require, need
--- 70. quelque (det., adj., adv.) some
--- 72. raison (noun [f.]) reason
--- 74. dont (pron.) whose, of which
--- 75. non (adv.) no, not
--- 76. an (noun [m.]) year
--- 78. jour (noun [m.]) day
--- 79. monsieur (noun [m.]) mister, sir, gentleman
--- 80. demander (verb) to ask for
--- 81. alors (adv.) then, so
--- 83. trouver (verb) to find
--- 84. personne (noun [f.]) person; (pron.) anyone, nobody
--- 85. rendre (verb) to render, return, yield, give up
--- 86. part (noun [f.]) share
--- 87. dernier (adj). last
--- 88. venir (verb) to come
--- 90. passer (verb) to pass
--- 92. lequel (pron.) who, whom, which
--- 93. suite (noun [f.]) result, follow-up, rest
--- 95. comprendre (verb) to understand
--- 97. point (adv.) at all; (noun [m.]) point
--- 98. ainsi (adv.) thus
--- 99. heure (noun [f.]) hour
--- 100. rester (verb) to stay
-
 UPDATE "language" SET head = 1 WHERE id = 1;
 
 -- because we explicitly set the id fields
