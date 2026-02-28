@@ -1,33 +1,23 @@
 {
-  "name": "express-boilerplate",
+  "name": "spaced-repetition-api",
   "version": "0.0.1",
   "description": "",
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "migrate": "postgrator --config postgrator-config.js",
-    "migrate:production": "heroku run npm run migrate",
-    "predeploy": "npm audit && npm run migrate:production",
-    "deploy": "git push heroku main",
-    "migrate:test": "env NODE_ENV=test npm run migrate",
-    "start": "node src/server.js",
-    "seed:production": "cat ./seeds/seed.tables.sql | heroku pg:psql"
+    "start": "node src/server.js"
   },
   "keywords": [],
   "engines": {
-    "node": "12.18.2"
+    "node": ">=18"
   },
   "author": "Xevier",
   "license": "MIT",
   "dependencies": {
-    "core-util-is": "^1.0.3",
     "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
-    "morgan": "^1.10.1",
-    "pg": "^8.19.0",
-    "postgrator-cli": "^9.1.0"
+    "morgan": "^1.10.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.14",
