@@ -44,35 +44,8 @@ languageRouter.post('/guess', jsonBodyParser, async (req, res, next) => {
     if (!guess)
       return res.status(400).send({ error: `Missing 'guess' in request body` })
 
-    const wordLL = LanguageService.createLL(req.language.head)
-
-    if (guess === wordLL.head.val.translation) {
-      wordLL.head.val.correct_count++
-      wordLL.head.val.memory_value *= 2
-      req.language.total_score++
-    } else {
-      wordLL.head.val.incorrect_count++
-      wordLL.head.val.memory_value = 1
-    }
-
-    const isCorrect = guess === wordLL.head.val.translation
-    const answeredWord = wordLL.head.val
-
-    let currentHead = wordLL.head
-    wordLL.head = wordLL.head.next
-    wordLL.insertAt(currentHead.val.memory_value, currentHead)
-    req.language.head = wordLL.head.val.id
-
-    LanguageService.updateTable(req.language, wordLL.head)
-
-    res.send({
-      nextWord: wordLL.head.val.original,
-      correctCount: wordLL.head.val.correct_count,
-      incorrectCount: wordLL.head.val.incorrect_count,
-      score: req.language.total_score,
-      translation: answeredWord.translation,
-      isCorrect: guess === answeredWord.translation,
-    })
+    const result = LanguageService.submitGuess(guess)
+    res.send(result)
   } catch (error) {
     next(error)
   }
